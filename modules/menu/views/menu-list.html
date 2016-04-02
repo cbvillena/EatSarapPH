@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">{{store.storename}} Menu</h2>
+    <button ng-click="addnewmenu()">Add new item</button>
+    <table class="table table-striped" ng-repeat="(key, value) in menu | groupBy: 'category_name'">
+        <tr>
+            <th colspan="5">{{ key }}</th>
+        </tr>
+        <tr ng-repeat="item in value">
+            <td><img ng-src="{{item.itemphoto_url}}" class="itemimg"/></td>
+            <td><a href ui-sref="viewmenu({itemid:item.item_id})">{{item.item_name}}</a></td>
+            <td>{{item.description}}</td>
+            <td>{{item.price}}</td>
+            <td><a href ui-sref="editmenu({itemid:item.item_id})" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit</a></td>
+        </tr>
+    </table>
+    <div><a href ui-sref="home">Back to home</a></div>
+</div>

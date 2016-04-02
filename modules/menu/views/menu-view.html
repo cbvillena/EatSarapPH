@@ -1,0 +1,15 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="text-center">
+        <img ng-src="{{item.itemphoto_url}}" />
+    </div>
+    <h2>Item name: {{item.item_name}}</h2>
+    <div>Description: {{item.description}}</div>
+    <div>Category: {{item.category_name}}</div>
+    <div>Price:{{item.price}}</div>
+    <div class="pull-left"><a href ui-sref="menulist">Back</a></div>
+    <div class="pull-right">
+        <button ng-click="deleteMenuItem(item)">Delete Item</button>
+        <button ng-click="editMenuItem(item)">Edit Item</button>
+    </div>
+    
+</div>

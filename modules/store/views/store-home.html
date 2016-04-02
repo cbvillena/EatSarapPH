@@ -1,0 +1,37 @@
+
+<div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center"><div><img ng-src="{{store.storephoto_url}}" class="storepic"/></div><a href ui-sref="viewstore"> {{store.storename}}</a></h2>
+    
+    <div class="text-center"><a href ui-sref="menulist">View Menu</a></div>
+    <h3>Active Orders</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>Orders</th>
+        </tr>
+        <tr ng-repeat="(key, value) in customers | groupBy: 'status_name'">
+            <td>
+                <div class="oStatus">{{key}}</div>
+                <div ng-repeat="(key2, value2) in value | groupBy: 'customer_id'">
+                    <div class="customerdiv">
+                        <div class="pull-left">Customer {{key2}}</div><div class="pull-right"><a href ng-click="completed()">Complete</a></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th class="col-md-10">Order item</th>
+                            <th class="col-md-1">Price</th>
+                            <th class="col-md-1">Quantity</th>
+                        </tr >
+                        <tr ng-repeat="item in value2">
+                            <td>{{item.item_name}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.quantity}}</td>
+                        </tr>
+                        <tr class="total"><td colspan="2">Total Bill</td><td>{{ getTotal(value2) }}</td></tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="text-center"><button ng-click="logout()">Logout</button></div>
+</div>

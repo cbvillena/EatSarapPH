@@ -1,0 +1,20 @@
+body { margin: 0; padding: 0; padding-top: 50px; }
+
+nav { background-color: #F9C748; }
+
+.clearfix { display: block; }
+.navigation { height: 50px; }
+
+.icon_menu, .icon_notify { fill: #FFF; display: block; margin-left: 10px; float: left; margin-top: 10px; }
+.logotext { color: #FFF; font-size: 32px; float: left; line-height: 40px; margin-left: 20px; }
+
+.main-content { margin: 10px; }
+
+.bg-info { padding: 10px; font-size: 24px;}
+
+.storepic { width: 150px; height: 150px; margin-right: 20px; }
+.itemimg { width: 150px; }
+
+.oStatus {text-align: center; font-size: 18px; padding: 5px; background-color: antiquewhite;}
+.customerdiv { background-color: azure; padding: 5px; }
+.total td { font-weight: bold; background-color: darkslategray; color: wheat;}

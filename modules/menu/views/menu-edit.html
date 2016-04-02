@@ -1,0 +1,32 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Edit</h2>
+
+    <form name="form" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.itemname.$dirty && form.itemname.$error.required }">
+            <label for="itemname">Item name</label>
+            <input type="text" name="itemname" id="itemname" class="form-control" ng-model="item.item_name" required />
+            <span ng-show="form.itemname.$dirty && form.itemname.$error.required" class="help-block">Item name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea ng-model="item.description" class="form-control" rows="3" name="description" id="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" name="price" id="price" class="form-control" ng-model="item.price" />
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" name="category" id="category" class="form-control col-xs-6" ng-model="item.category_name" />
+        </div>
+        <div class="form-group">
+            <label for="photo">Item picture</label>
+            <input type="text" name="photo" id="photo" class="form-control col-xs-6" ng-model="item.itemphoto_url" />
+        </div>
+        
+        <div class="pull-left"><a ui-sref="menulist" class="btn">Cancel</a></div>
+        <div class="pull-right">
+            <button ng-click="editMenuItem(item)" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
